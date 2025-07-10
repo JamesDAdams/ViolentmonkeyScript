@@ -33,7 +33,7 @@ Cordialement.`
             label: "Livraison possible",
             message: `Bonjour,
 
-Je ne suis pas véhiculé, une livraison sur VotreVille est-elle possible ? test
+Je ne suis pas véhiculé, une livraison sur VotreVille est-elle possible ?
 
 Cordialement.`
         }
