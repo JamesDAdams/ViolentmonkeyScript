@@ -5,6 +5,8 @@
 // @description  Ajoute plusieurs boutons pour insérer des messages prédéfinis dans le textarea #body sur Leboncoin/reply
 // @author       JamesAdams
 // @icon         https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2k-G-c-t2NEGVYz5fBjf81CSi2g-dqa2Qw&s
+// @updateURL    https://raw.githubusercontent.com/JamesDAdams/ViolentmonkeyScript/refs/heads/main/leboncoinMultiBoutonsToTextarea.js
+// @downloadURL  https://raw.githubusercontent.com/JamesDAdams/ViolentmonkeyScript/refs/heads/main/leboncoinMultiBoutonsToTextarea.js
 // @match        https://www.leboncoin.fr/reply/*
 // ==/UserScript==
 
