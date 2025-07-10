@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Leboncoin Multi-boutons to textarea (SPA compatible)
+// @name         Leboncoin Multi-boutons to textarea (SPA + React compatible)
 // @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  Ajoute plusieurs boutons pour insérer des messages prédéfinis dans le textarea #body sur Leboncoin/reply, même après navigation interne (SPA).
+// @version      1.4
+// @description  Ajoute plusieurs boutons pour insérer des messages prédéfinis dans le textarea #body sur Leboncoin/reply, même après navigation interne (SPA), compatible React (setter natif).
 // @author       JamesAdams
 // @icon         https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2k-G-c-t2NEGVYz5fBjf81CSi2g-dqa2Qw&s
 // @updateURL    https://raw.githubusercontent.com/JamesDAdams/ViolentmonkeyScript/refs/heads/main/leboncoinMultiBoutonsToTextarea.js
@@ -40,7 +40,7 @@ Je ne suis pas véhiculé, une livraison sur VotreVilleTest est-elle possible ?
 Cordialement.`
         },
         {
-            label: "La reference",
+            label: "Quel est la ref",
             message: `Bonjour,
 
 Votre annonce est toujours disponible ? Est-il possible d'avoir la référence s'il vous plaît ?
@@ -91,7 +91,11 @@ Cordialement.`
             bouton.addEventListener("click", function () {
                 const textarea = document.getElementById("body");
                 if (textarea) {
-                    textarea.value = message;
+                    // Setter natif pour React/Vue
+                    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, "value").set;
+                    nativeInputValueSetter.call(textarea, message);
+                    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+
                     bouton.textContent = "Inséré !";
                     setTimeout(() => bouton.textContent = label, 1500);
                 } else {
