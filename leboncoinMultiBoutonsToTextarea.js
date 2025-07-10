@@ -38,6 +38,14 @@ Cordialement.`
 Je ne suis pas véhiculé, une livraison sur VotreVilleTest est-elle possible ?
 
 Cordialement.`
+        },
+        {
+            label: "La reference",
+            message: `Bonjour,
+
+Votre annonce est toujours disponible ? Est-il possible d'avoir la référence s'il vous plaît ?
+
+Cordialement.`
         }
     ];
 
